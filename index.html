@@ -158,7 +158,7 @@ h4:has(+ p) {
   margin-bottom: 0;
 }
 
-h6 {
+h7 {
   display: flex;
   padding: 60px;
   align-items: center;
@@ -212,6 +212,15 @@ input[type=submit]:hover {
   background-color: white;
   padding: 18px;
 }
+
+project-card {
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 2px solid black;
+}
 	
 </style>
   <h1><b>Charlotte Kim's Portfolio</b></h1>
@@ -224,16 +233,22 @@ input[type=submit]:hover {
      I was only one of 5 girls that went from my school. I am hard-worker, self-starter, and eager to learn.</p>
     
   <h4><b>Projects</b></h4>
-    <h5><a href="https://github.com/CharlotteKim123">My Github</a></h5>
+    <project-card>
+    	<h5>Emotion Detector</h5>
+    	<a href="https://github.com/CharlotteKim123/emotion-detector">
 	<picture>
 	     <source media="(min-width:650px)" srcset="Screenshot 2025-02-16.png">
 	     <img src="/images/Screenshot 2025-02-16.png" alt="emotion detector" width= device-width height=300px>
         </picture>
-	<p>The Emotion Detecter: This website allows one to see the overall review of a product (i.e. Amazon product).
+	<p>Emotion Detecter: This website allows one to see the overall review of a product (i.e. Amazon product).
 	All you have to do is input the link to the product into the given text box. The website will then
 	return the product's overall word cloud, positive word cloud, negative word cloud, a bar graph and a circle
 	graph showing the positive vs negative reviews, and the overall review of the product.</p>
-
+    </project-card>
+	    
+    <project-card>  
+	<h6>The Game of Life</h6>
+	<a href = "https://github.com/CharlotteKim123/HW4">
 	<picture>
 	     <source media="(min-width:650px)" srcset="Life.png">
 	     <img src="/images/Life.png" alt="life" width= device-width height=300px>
@@ -241,8 +256,9 @@ input[type=submit]:hover {
 	<p>The Game of Life: This program creates a new board by reading a file and setting the rows and columns of the board
 	on the file, where the first line is the number of rows, and the second line being the number of columns. We also
 	simulate the "steps" generations for each board.</p>
+    </project-card>
    
-   <h6>Contact Form</h6>
+   <h7>Contact Form</h7>
 
 <div class="container">
   <form action="https://httpbin.org/">
