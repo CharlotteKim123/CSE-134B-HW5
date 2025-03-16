@@ -9,15 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Charlotte Kim's Portfolio</title>
 	<link href="computercode.jpeg" rel="icon" />
-	<script>
-    class HTML extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `<h1>Hello, World!</h1>`;
-      }
-    }
-    customElements.define('hello-world', HelloWorld);
-		console.log("Hello World!");
-	</script>
 <script>
 
   const input = document.getElementById("email");
@@ -25,6 +16,8 @@
   const emailInfo = document.getElementById("email");
 
   const emailError = document.getElementById("emailError");
+
+  const comments = document.getElementById("comments");
 
 
   input.addEventListener("input", () => {
@@ -40,6 +33,69 @@
     }
 
   });
+
+  console.log(comments.checkValidity());
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("Contact Form");
+    const errMessage = document.querySelector("#error-message");
+    const comment = document.querySelector("#comments");
+    const counter = document.querySelector("#char-counter");
+    const max = commentField.getAttribute("maxlength");
+    let form_errors = [];
+
+    form.addEventListener("input", (event) => {
+        const character = event.character;
+        if (character.dataset.pattern) {
+            const match = new RegExp(character.dataset.pattern);
+            if (!match.test(character.value)) {
+                flashField(character, "Illegal character entered!");
+            }
+        }
+    });
+
+    comment.addEventListener("input", () => {
+        const remainder = max - comment.value.length;
+        counter.textContent = remainder + 'characters remaining';
+        
+        if (remainder <= 10) {
+            counter.style.color = "red";
+        } else {
+            counter.style.color = "black";
+        }
+    });
+
+    form.addEventListener("submit", (event) => {
+        form_errors = [];
+        let validity = true;
+        
+        form.querySelectorAll("input, textarea").forEach((field) => {
+            if (!field.checkValidity()) {
+                validity = false;
+                form_errors.push({
+                    field: field.name,
+                    message: field.errMessage
+                });
+                flashField(field, field.validationMessage);
+            }
+        });
+
+        if (!validity) {
+            document.querySelector("#form-errors").value = JSON.stringify(form_errors);
+        }
+    });
+
+    function flashField(field, message) {
+        field.classList.add("error");
+        errMessage.textContent = message;
+        setTimeout(() => {
+            field.classList.remove("error");
+            errMessage.textContent = "";
+        }, 1000);
+    }
+});
+
+
 
 </script>
 </head>
@@ -150,6 +206,14 @@ h4 {
   background-color: color(display-p3 1 0.75 0.79 / .3);
 }
 
+p {
+  padding: 40px;
+}
+
+h4:has(+ p) {
+  margin-bottom: 0;
+}
+
 h5 {
   font-size: 30px;
 }
@@ -158,13 +222,6 @@ h6 {
   font-size: 30px;
 }
 
-p {
-  padding: 40px;
-}
-
-h4:has(+ p) {
-  margin-bottom: 0;
-}
 
 h7 {
   display: flex;
@@ -192,7 +249,7 @@ input[required] {
 }
 
 textarea {
-  maxlength: 200;
+  maxlength: 1000;
   width: device-width;
   padding: 14px;
   border: 2px solid #ccc;
@@ -220,6 +277,16 @@ input[type=submit]:hover {
   background-color: white;
   padding: 18px;
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode > .container {
+  background-color: black;
+}
+	
 
 project-card {
   display: flex;
@@ -286,6 +353,15 @@ project-card {
     
   </form>
 </div>
+		
+<button onclick="themeSwitch()">Switch mode</button>
+
+<script>
+function themeSwitch() {
+   var el = document.body;
+   el.classList.toggle("dark-mode");
+}
+</script>
 
     
     <hr>
