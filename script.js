@@ -1,7 +1,7 @@
-function populateStorage() {
-  localStorage.setItem("bgcolor", "red");
-  localStorage.setItem("font", "Helvetica");
-  localStorage.setItem("image", "myCat.png");
+function fillStorage() {
+  localStorage.setItem("font", "sans-serif");
+  localStorage.setItem("image", "Cipher.jpg");
+  localStorage.setItem("color", "black");
 }
 
 
