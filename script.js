@@ -3,51 +3,27 @@ const binURL = "https://api.jsonbin.io/v3/b/67d7aba98a456b7966774685";
 const binKEY = "$2a$10$fCH5bN6IU6urUsaBiK9Wa.UoH.S.8TG3S0SwMej0rFP7hX5HoHSvu";
 
 
-const Data = [
-    { 
-        id: 1, 
-        title: "Cipher", 
-        image: "Cipher.jpg",
-        description: "This program uses a cipher to encrypt the inputted files.",
-        link: "https://github.com/CharlotteKim123/Cipher"
-    }
-];
-
-
 function loadLocal() {
-    fetch(binURL, {
-        method: "GET",
-        headers: {
-            "X-Master-Key": binKEY,  
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.record) {
-            createCard(data.record);  
-        } else {
-            alert("No data found in JSONBin.");
-        }
-    })
+    var a = localStorage.getItem("projectName");
+    document.getElementById("load").innerHTML = a;
+    var b = localStorage.getItem("projectImage");
+    document.getElementById("load").innerHTML = b;
+    var c = localStorage.getItem("projectLink");
+    document.getElementById("load").innerHTML = c;
+    var d = localStorage.getItem("projectDescription");
+    document.getElementById("load").innerHTML = d;
 }
 
 
-function saveToBin(Data) {
-    fetch(binURL, {
-        method: "PUT",  // Use PUT to update existing data
-        headers: {
-            "Content-Type": "application/json",
-            "X-Master-Key": binKEY,
-        },
-        body: JSON.stringify(Data),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Data saved:", data);
-    })
-    .catch(error => {
-        alert("Failed to save data to bin.");
-    });
+function saveToLocal() {
+    const title = { title: "Cipher" };
+    localStorage.setItem("projectName", title);
+    localStorage.setItem("projectName", JSON.stringify(title));
+    localStorage.setItem("projectImage", "Cipher.jpg");
+    const link = { link: "https://github.com/CharlotteKim123/Cipher" };
+    localStorage.setItem("projectLink", link);
+    localStorage.setItem("projectLink", JSON.stringify(link));
+    localStorage.setItem("projectDescription", "This program uses a cipher to encrypt the inputted files.");
 }
 
 
