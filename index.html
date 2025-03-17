@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Charlotte Kim's Portfolio</title>
 	<link href="computercode.jpeg" rel="icon" />
+	<script src="script.js" defer></script>
 <script>
 
   const input = document.getElementById("email");
@@ -301,7 +302,13 @@ input[type=submit]:hover {
 .dark-mode > .container {
   background-color: black;
 }
-	
+
+.card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 20px;
+}
 
 project-card {
   display: flex;
@@ -355,7 +362,7 @@ project-card {
 	<p><a href = "https://github.com/CharlotteKim123/Cipher">"Cipher"</a>: This program uses a cipher to encrypt the inputted files.</p>
     </project-card>
 
-   <project-card>
+   <project-card id = "load">
        <div id="projButtons">
            <button onclick="loadLocal()">Load Local</button>
            <button onclick="loadRemote()">Load Remote</button>
