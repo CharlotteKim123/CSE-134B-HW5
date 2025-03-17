@@ -162,7 +162,7 @@ h1 {
   animation-duration: 6s;
 }
 
-h2 {
+h9 {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -314,9 +314,9 @@ project-card {
 	
 </style>
   <h1><b>Charlotte Kim's Portfolio</b></h1>
-  <h2>
+  <h9>
       <img src="/images/IMG_2480 (1).jpg" alt="Picture of me" width= device-width height=300px>
-  </h2>
+  </h9>
   <h3><b>About Me</b></h3>
   <p>I am a third year Computer Science major with a minor in Entrepreneurship and Innovation at UCSD's Jacobs School of Engineering. 
      I got into Computer Science after participating in a Cybersecurity lab at Tech Trek, a prestigious STEM camp for girls where
@@ -350,18 +350,19 @@ project-card {
 	<h7>Cipher</h7>
 	<picture>
 	     <source media="(min-width:650px)" srcset="Cipher.jpg">
-	     <img src="Cipher.jpg" alt="GameofLife" width= device-width height=300px>
+	     <img src="Cipher.jpg" alt="Cipher" width= device-width height=300px>
         </picture>
 	<p><a href = "https://github.com/CharlotteKim123/Cipher">"Cipher"</a>: This program uses a cipher to encrypt the inputted files.</p>
     </project-card>
 
-    <project-card>
-	<div id="buttons">
-             <button onclick="loadLocalData()">Load Local</button>
-             <button onclick="loadRemoteData()">Load Remote</button>
-        </div>
-    </project-card>
+   <project-card>
+       <div id="projButtons">
+           <button onclick="loadLocal()">Load Local</button>
+           <button onclick="loadRemote()">Load Remote</button>
+       </div>
 
+       <div class="card-container" id="projContainer"></div>
+    </project-card>
 		
    <h8>Contact Form</h8>
 
