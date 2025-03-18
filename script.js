@@ -4,11 +4,11 @@ const localStorage = "https://api.jsonbin.io/v3/b/67d7aba98a456b7966774685";
 
 function loadLocal() {
     var a = localStorage.getItem("projectName");
-    document.getElementById("load").innerHTML = a;
+    document.getElementById("title").innerHTML = a;
     var b = localStorage.getItem("projectImage");
-    document.getElementById("load").innerHTML = b;
+    document.getElementById("image").innerHTML = b;
     var c = localStorage.getItem("projectLink");
-    document.getElementById("load").innerHTML = c;
+    document.getElementById("link").innerHTML = c;
     var d = localStorage.getItem("projectDescription");
     document.getElementById("load").innerHTML = d;
 }
