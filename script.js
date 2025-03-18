@@ -1,16 +1,15 @@
 const URL = "https://my-json-server.typicode.com/CharlotteKim123/CSE-134B-HW5";
 const binURL = "https://api.jsonbin.io/v3/b/67d7aba98a456b7966774685";
-const binKEY = "$2a$10$fCH5bN6IU6urUsaBiK9Wa.UoH.S.8TG3S0SwMej0rFP7hX5HoHSvu";
 
 
 function loadLocal() {
-    var a = localStorage.getItem("projectName");
+    var a = binURL.getItem("projectName");
     document.getElementById("load").innerHTML = a;
-    var b = localStorage.getItem("projectImage");
+    var b = binURL.getItem("projectImage");
     document.getElementById("load").innerHTML = b;
-    var c = localStorage.getItem("projectLink");
+    var c = binURL.getItem("projectLink");
     document.getElementById("load").innerHTML = c;
-    var d = localStorage.getItem("projectDescription");
+    var d = binURL.getItem("projectDescription");
     document.getElementById("load").innerHTML = d;
 }
 
