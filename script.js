@@ -52,4 +52,4 @@ function createCard(data) {
     });
 }
 
-saveToBin();
+saveToLocal();
