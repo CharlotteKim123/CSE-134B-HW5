@@ -3,6 +3,7 @@ const localStorage = "https://api.jsonbin.io/v3/b/67d7aba98a456b7966774685";
 
 
 function loadLocal() {
+    saveToLocal();
     var a = localStorage.getItem("projectName");
     document.getElementById("title").innerHTML = a;
     var b = localStorage.getItem("projectImage");
@@ -51,5 +52,3 @@ function createCard(data) {
         container.appendChild(card);
     });
 }
-
-saveToLocal();
