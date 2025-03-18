@@ -3,13 +3,13 @@ const localStorage = "https://api.jsonbin.io/v3/b/67d7aba98a456b7966774685";
 
 
 function loadLocal() {
-    var a = binURL.getItem("projectName");
+    var a = localStorage.getItem("projectName");
     document.getElementById("load").innerHTML = a;
-    var b = binURL.getItem("projectImage");
+    var b = localStorage.getItem("projectImage");
     document.getElementById("load").innerHTML = b;
-    var c = binURL.getItem("projectLink");
+    var c = localStorage.getItem("projectLink");
     document.getElementById("load").innerHTML = c;
-    var d = binURL.getItem("projectDescription");
+    var d = localStorage.getItem("projectDescription");
     document.getElementById("load").innerHTML = d;
 }
 
